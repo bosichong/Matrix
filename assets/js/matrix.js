@@ -98,7 +98,7 @@ const App = {
     this.generateCode();
   },
   methods: {
-    generateCode() {
+    generateCode: _.debounce(function () {
       console.log("生成代码")
       this.js_code = `//Matrix 矩阵 黑客帝国字符雨下落 JavaScript代码生成器 https://suiyan.cc/matrix
 
@@ -229,8 +229,8 @@ const App = {
 
       draw();
       `
-    },
-    initCancas() {
+    }, 500),
+    initCancas: _.debounce(function () {
 
       const CANVAS_BORDER = this.canvas_border;
       const CANVAS_BACK_COLOR = this.canvas_back_color;
@@ -356,7 +356,7 @@ const App = {
       }
 
       draw();
-    },
+    }, 500),
   },
 
 };
