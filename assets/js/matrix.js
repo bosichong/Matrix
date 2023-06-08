@@ -3,19 +3,13 @@
 (function () {
   new ClipboardJS('.copybtn');
 
-  const coffeebtn = document.getElementById('coffeebtn');
-  const coffeeimg = document.getElementById('coffeeimg');
-
-  coffeebtn.addEventListener('click', function () {
-    coffeeimg.classList.toggle("hidden")
-  });
-
 })()
 
 
 const App = {
   data() {
     return {
+      coffeeShow:false,
       js_code: ``,
       canvas_width: 1000,
       canvas_heidth: 400,
